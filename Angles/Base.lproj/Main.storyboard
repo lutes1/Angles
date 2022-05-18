@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Angles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXX-Zl-UA4">
+                                <rect key="frame" x="20" y="64" width="130.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Calculate angles"/>
+                                <connections>
+                                    <action selector="calculateAngles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7u-tM-dSY"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJE-0v-49S" customClass="DrawingView" customModule="Angles" customModuleProvider="target">
+                                <rect key="frame" x="20" y="103" width="374" height="631"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Create some angles and tap on calculate angles..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5gq-6f-hf1">
+                                <rect key="frame" x="20" y="742" width="374" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BkB-ln-afJ"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemGray4Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTU-O4-MBx">
+                                <rect key="frame" x="274" y="64" width="120" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Clear all points"/>
+                                <connections>
+                                    <action selector="clearAllPoints:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zh0-hH-GvG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="PJE-0v-49S" firstAttribute="top" secondItem="zXX-Zl-UA4" secondAttribute="bottom" constant="8" id="07A-no-E85"/>
+                            <constraint firstItem="PJE-0v-49S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7eb-Df-yGG"/>
+                            <constraint firstItem="5gq-6f-hf1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8aE-gs-mHy"/>
+                            <constraint firstItem="5gq-6f-hf1" firstAttribute="top" secondItem="PJE-0v-49S" secondAttribute="bottom" constant="8" id="IoM-sD-Gai"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5gq-6f-hf1" secondAttribute="bottom" constant="20" id="UMx-Ow-Z3M"/>
+                            <constraint firstItem="zXX-Zl-UA4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="apo-gV-XTg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hTU-O4-MBx" secondAttribute="trailing" constant="20" id="fCY-iQ-xWZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PJE-0v-49S" secondAttribute="trailing" constant="20" id="g2e-Yi-INm"/>
+                            <constraint firstItem="hTU-O4-MBx" firstAttribute="firstBaseline" secondItem="zXX-Zl-UA4" secondAttribute="firstBaseline" id="gqx-7v-fox"/>
+                            <constraint firstItem="zXX-Zl-UA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iHK-Vu-9KG"/>
+                            <constraint firstItem="hTU-O4-MBx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="qGD-t0-Bw0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5gq-6f-hf1" secondAttribute="trailing" constant="20" id="rk1-4G-N9y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="drawingView" destination="PJE-0v-49S" id="YXv-Hf-Uf7"/>
+                        <outlet property="resultTextField" destination="5gq-6f-hf1" id="fod-hN-N1i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="121"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
